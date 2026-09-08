@@ -9,17 +9,16 @@ using static GameInputAction;
 public class InputManager : MonoBehaviour, IPlayerActions 
 {
     private GameInputAction _inputAction; 
-    // Membuat event OnSpaceInput yang mengirim satu data integer  
-    public UnityEvent<int> OnSpaceInput;
+    
+    //membuat event onmoveinput
+    public UnityEvent<Vector2> OnMoveInput;
+    // Membuat event OnSprintInput 
+    public UnityEvent<bool> OnSprintInput; 
     private IPlayerActions _playerActionsImplementation;
 
     private void Update() 
     { 
-        if (Input.GetKeyDown(KeyCode.Space)) 
-        { 
-            // Trigger event OnSpaceInput dan mengirim data bernilai 10  
-            OnSpaceInput?.Invoke(10);
-        } 
+        
     }
     private void Awake() 
     { 
@@ -45,14 +44,32 @@ public class InputManager : MonoBehaviour, IPlayerActions
             // ketika input interact ditekan 
             Debug.Log("Interact"); 
         } 
-    } 
+    }
+    
+
     public void OnMove(InputAction.CallbackContext context) 
     { 
         // Menulis code yang akan dieksekusi 
         // ketika tombol move ditekan 
         // context.ReadValue() digunakan untuk membaca nilai input 
         // dengan tipe vector, kemudian dimunculkan pada log di console 
-        Debug.Log( context.ReadValue<Vector2>()); 
+        OnMoveInput.Invoke(context.ReadValue<Vector2>());
     }
-    
+    public void OnSprint(InputAction.CallbackContext context) 
+    { 
+        // Mengecek apakah input ditekan 
+        if (context.performed) 
+        { 
+            // Jika input ditekan maka trigger event OnSprintInput 
+            // Mengirim data true 
+            OnSprintInput?.Invoke(true); 
+        } 
+        // Mengecek apakah input dilepas 
+        if (context.canceled) 
+        { 
+            // Jika input dilepas maka trigger event OnSprintInput 
+            // Mengirim data false 
+            OnSprintInput?.Invoke(false); 
+        } 
+    }
 }
