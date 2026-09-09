@@ -53,7 +53,7 @@ public class InputManager : MonoBehaviour, IPlayerActions
         // ketika tombol move ditekan 
         // context.ReadValue() digunakan untuk membaca nilai input 
         // dengan tipe vector, kemudian dimunculkan pada log di console 
-        OnMoveInput.Invoke(context.ReadValue<Vector2>());
+        OnMoveInput?.Invoke(context.ReadValue<Vector2>());
     }
     public void OnSprint(InputAction.CallbackContext context) 
     { 
@@ -71,5 +71,12 @@ public class InputManager : MonoBehaviour, IPlayerActions
             // Mengirim data false 
             OnSprintInput?.Invoke(false); 
         } 
+    }
+    public void OnLook(InputAction.CallbackContext context) 
+    { 
+        // Menulis code yang akan dieksekusi 
+        // ketika tombol interact ditekan 
+        // contect.performed digunakan untuk mengecek apakah input ditekan 
+        
     }
 }
