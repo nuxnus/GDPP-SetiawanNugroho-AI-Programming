@@ -31,6 +31,9 @@ public class PlayerCharacterMovement : MonoBehaviour
     [SerializeField] 
     private float _acceleration = 0.5f; 
     
+    // Membuat property IsSprint untuk mengakses variable _isSprint 
+    public bool IsSprint => _isSprint; 
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
