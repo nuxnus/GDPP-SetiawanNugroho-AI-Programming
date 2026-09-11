@@ -1,0 +1,12 @@
+using UnityEngine;
+using PapayaKit.Core;
+
+#ROOTNAMESPACEBEGIN#
+public class #SCRIPTNAME# : PersistentInstallerBase
+{
+    public override void RegisterServices()
+    {
+        #NOTRIM#
+    }
+}
+#ROOTNAMESPACEEND#

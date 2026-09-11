@@ -1,0 +1,12 @@
+using UnityEngine;
+using PapayaKit.Core;
+
+#ROOTNAMESPACEBEGIN#
+public class #SCRIPTNAME# : SceneInstallerBase
+{
+    public override void RegisterServices()
+    {
+        #NOTRIM#
+    }
+}
+#ROOTNAMESPACEEND#
