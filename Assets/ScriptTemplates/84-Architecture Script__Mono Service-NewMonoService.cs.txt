@@ -1,9 +1,0 @@
-using UnityEngine;
-using PapayaKit.Core;
-
-#ROOTNAMESPACEBEGIN#
-public class #SCRIPTNAME# : MonoService
-{
-    #NOTRIM#
-}
-#ROOTNAMESPACEEND#

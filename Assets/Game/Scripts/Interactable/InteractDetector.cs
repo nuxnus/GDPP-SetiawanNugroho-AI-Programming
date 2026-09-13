@@ -75,7 +75,8 @@ public class InteractDetector : MonoBehaviour
             // Jika ada object yang terdeteksi
             // Mengecek apakah object punya component class yang implementasi
             // interface interactable
-            IInteractable interactable = hit.collider.gameObject.GetComponent<IInteractable>();
+            IInteractable interactable = hit.collider.gameObject.
+                                         GetComponent<IInteractable>();
             if (interactable != null)
             {
                 // Jika implementasi interface interactable
