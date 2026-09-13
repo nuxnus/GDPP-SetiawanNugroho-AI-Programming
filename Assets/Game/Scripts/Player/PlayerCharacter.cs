@@ -24,6 +24,7 @@ public class PlayerCharacter : MonoBehaviour
     // Property untuk mengakses variable _inventory
     public InventoryManager Inventory => _inventory;
     
+    
     private void Awake()
     {
         // Ketika game dijalankan,
